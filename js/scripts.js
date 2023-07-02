@@ -18,11 +18,17 @@ function printPhrase(text) {
   output.innerText = text;
 }
 
+function clearTextArea() {
+  let textArea = document.getElementById("text-passage");
+  textArea.value = "";
+}
+
 function handleFormSubmission(e) {
     e.preventDefault();
     let phrase = document.getElementById("text-passage").value;
     let convertedPhrase =  convertPhrase(phrase);
     printPhrase(convertedPhrase);
+    clearTextArea();
 }
 
 window.addEventListener("load", function() {
